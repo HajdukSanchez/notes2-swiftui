@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		CDDC793B2C6573FA00DC8323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC793A2C6573FA00DC8323 /* AppDelegate.swift */; };
 		CDDC793D2C6573FA00DC8323 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC793C2C6573FA00DC8323 /* SceneDelegate.swift */; };
-		CDDC793F2C6573FA00DC8323 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC793E2C6573FA00DC8323 /* ViewController.swift */; };
 		CDDC79422C6573FA00DC8323 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CDDC79412C6573FA00DC8323 /* Base */; };
 		CDDC79452C6573FA00DC8323 /* Notes2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDDC79432C6573FA00DC8323 /* Notes2.xcdatamodeld */; };
 		CDDC79472C6573FE00DC8323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDDC79462C6573FE00DC8323 /* Assets.xcassets */; };
 		CDDC794A2C6573FE00DC8323 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CDDC79492C6573FE00DC8323 /* Base */; };
+		CDDC79542C65743C00DC8323 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC79532C65743C00DC8323 /* HomeViewController.swift */; };
+		CDDC79582C65745600DC8323 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC79572C65745600DC8323 /* AddNoteViewController.swift */; };
+		CDDC795A2C65746D00DC8323 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC79592C65746D00DC8323 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CDDC79372C6573FA00DC8323 /* Notes2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDC793A2C6573FA00DC8323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDDC793C2C6573FA00DC8323 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CDDC793E2C6573FA00DC8323 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CDDC79412C6573FA00DC8323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDDC79442C6573FA00DC8323 /* Notes2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes2.xcdatamodel; sourceTree = "<group>"; };
 		CDDC79462C6573FE00DC8323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDDC79492C6573FE00DC8323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDDC794B2C6573FE00DC8323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDDC79532C65743C00DC8323 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CDDC79572C65745600DC8323 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		CDDC79592C65746D00DC8323 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,10 @@
 		CDDC79392C6573FA00DC8323 /* Notes2 */ = {
 			isa = PBXGroup;
 			children = (
+				CDDC79522C65741B00DC8323 /* View */,
+				CDDC79512C65741500DC8323 /* Model */,
 				CDDC793A2C6573FA00DC8323 /* AppDelegate.swift */,
 				CDDC793C2C6573FA00DC8323 /* SceneDelegate.swift */,
-				CDDC793E2C6573FA00DC8323 /* ViewController.swift */,
 				CDDC79402C6573FA00DC8323 /* Main.storyboard */,
 				CDDC79462C6573FE00DC8323 /* Assets.xcassets */,
 				CDDC79482C6573FE00DC8323 /* LaunchScreen.storyboard */,
@@ -68,6 +73,23 @@
 				CDDC79432C6573FA00DC8323 /* Notes2.xcdatamodeld */,
 			);
 			path = Notes2;
+			sourceTree = "<group>";
+		};
+		CDDC79512C65741500DC8323 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDDC79592C65746D00DC8323 /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CDDC79522C65741B00DC8323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDDC79532C65743C00DC8323 /* HomeViewController.swift */,
+				CDDC79572C65745600DC8323 /* AddNoteViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDDC793F2C6573FA00DC8323 /* ViewController.swift in Sources */,
 				CDDC793B2C6573FA00DC8323 /* AppDelegate.swift in Sources */,
 				CDDC79452C6573FA00DC8323 /* Notes2.xcdatamodeld in Sources */,
 				CDDC793D2C6573FA00DC8323 /* SceneDelegate.swift in Sources */,
+				CDDC79582C65745600DC8323 /* AddNoteViewController.swift in Sources */,
+				CDDC79542C65743C00DC8323 /* HomeViewController.swift in Sources */,
+				CDDC795A2C65746D00DC8323 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
