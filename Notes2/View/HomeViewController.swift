@@ -54,6 +54,21 @@ extension HomeViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = dateFormatter.string(from: note.date ?? Date())
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteButton = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            print("delete")
+        }
+        deleteButton.image = UIImage(systemName: "trash")
+        
+        let editButton = UIContextualAction(style: .normal, title: "Edit") { _, _, _ in
+            print("edit")
+        }
+        editButton.backgroundColor = .systemBlue
+        editButton.image = UIImage(systemName: "pencil")
+        
+        return UISwipeActionsConfiguration(actions: [editButton, deleteButton])
+    }
         
 }
 
