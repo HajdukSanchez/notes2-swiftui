@@ -40,7 +40,19 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = table.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath)
+        let note = notes[indexPath.row] // Get the note
+        cell.textLabel?.text = note.title // Set the title
+        
+        // Create formatter for date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        dateFormatter.timeStyle = .medium
+        dateFormatter.locale = Locale.current
+        
+        // Add date to cell
+        cell.detailTextLabel?.text = dateFormatter.string(from: note.date ?? Date())
+        return cell
     }
         
 }
