@@ -57,7 +57,15 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteButton = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
-            print("delete")
+            let context = Note.shared.getContext()
+            let deleteObject = self.fetchResultController.object(at: indexPath)
+            context.delete(deleteObject)
+            
+            do {
+                try context.save()
+            } catch let error as NSError {
+                print("Error deleting note", error.localizedDescription)
+            }
         }
         deleteButton.image = UIImage(systemName: "trash")
         
