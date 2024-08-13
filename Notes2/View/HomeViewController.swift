@@ -77,6 +77,20 @@ extension HomeViewController: UITableViewDataSource {
         
         return UISwipeActionsConfiguration(actions: [editButton, deleteButton])
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "updateNote", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "updateNote" {
+            if let id = table.indexPathForSelectedRow {
+                let row = notes[id.row]
+                let destination = segue.destination as! AddNoteViewController
+                destination.note = row
+            }
+        }
+    }
         
 }
 
