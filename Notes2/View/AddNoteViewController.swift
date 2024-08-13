@@ -22,6 +22,7 @@ class AddNoteViewController: UIViewController {
         super.viewDidLoad()
 
         setFieldsValues()
+        validateButtonState(buttonEnabled: note != nil)
     }
     
     func setFieldsValues() {
@@ -41,5 +42,23 @@ class AddNoteViewController: UIViewController {
         // Go back to previus page
         navigationController?.popViewController(animated: true)
     }
+    
+    func changeButtonState(isEnabled: Bool = false) {
+        buttonView.isEnabled = isEnabled
+        buttonView.backgroundColor = isEnabled ? .systemTeal : .systemGray2
+    }
+    
+    func validateButtonState(buttonEnabled: Bool) {
+        changeButtonState(isEnabled: buttonEnabled)
+        // Create an observable to validate data and set values
+        titleView.addTarget(self, action: #selector(validateTextField), for: .editingChanged)
+    }
 
+    @objc func validateTextField(sender: UITextField) {
+        guard let titleData = titleView.text, !titleData.isEmpty else {
+            changeButtonState()
+            return
+        }
+        changeButtonState(isEnabled: true)
+    }
 }
