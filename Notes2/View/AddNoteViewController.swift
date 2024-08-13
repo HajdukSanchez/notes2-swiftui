@@ -33,7 +33,13 @@ class AddNoteViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction func onSave(_ sender: UIButton) {
-        Note.shared.saveData(title: titleView.text ?? "", note: noteView.text ?? "", date: dateView.date)
+        if note == nil {
+            Note.shared.saveData(title: titleView.text ?? "", note: noteView.text ?? "", date: dateView.date)
+        } else {
+            Note.shared.editData(title: titleView.text ?? "", note: noteView.text ?? "", date: dateView.date, noteData: note!)
+        }
+        // Go back to previus page
+        navigationController?.popViewController(animated: true)
     }
 
 }

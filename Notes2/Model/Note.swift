@@ -32,4 +32,18 @@ class Note {
             print("No save note", error.localizedDescription)
         }
     }
+    
+    func editData(title: String, note: String, date: Date, noteData: Notes) {
+        let context = getContext()
+        noteData.setValue(title, forKey: "title")
+        noteData.setValue(note, forKey: "note")
+        noteData.setValue(date, forKey: "date")
+        
+        do {
+            try context.save()
+            print("edited note")
+        } catch let error as NSError {
+            print("No edited note", error.localizedDescription)
+        }
+    }
 }
